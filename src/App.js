@@ -5,15 +5,22 @@ import FoodsCategory from './components/FoodsCategory'
 
 import './App.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchFoodList } from './store/modules/takeaway'
+import { fetchFoodsList } from './store/modules/takeaway'
 import { useEffect } from 'react'
 
+
 const App = () => {
+  // 触发action执行
+  // 1. useDispatch -> dispatch 2. actionCreater导入进来 3.useEffect
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(fetchFoodList())
+    dispatch(fetchFoodsList())
   }, [dispatch])
-  let { foodsList, activeIndex } = useSelector(state => state.foods)
+
+  // 获取foodsList渲染数据列表
+  // 1. useSelector
+  const { foodsList, activeIndex } = useSelector(state => state.foods)
+
   return (
     <div className="home">
       {/* 导航 */}
@@ -23,7 +30,6 @@ const App = () => {
       <div className="content-wrap">
         <div className="content">
           <Menu/>
-
           <div className="list-content">
             <div className="goods-list">
               {/* 外卖商品列表 */}
