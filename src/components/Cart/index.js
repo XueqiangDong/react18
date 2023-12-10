@@ -15,9 +15,9 @@ const Cart = () => {
   // 控制购物车打开关闭的状态
   const [visible, setVisible] = useState(false)
 
-  const onShow = () => {
+  const toggleShow = () => {
     if (cartList.length > 0) {
-      setVisible(true)
+      setVisible(!visible)
     }
   }
   return (
@@ -30,7 +30,7 @@ const Cart = () => {
       <div className="cart">
         {/* fill 添加fill类名购物车高亮*/}
         {/* 购物车数量 */}
-        <div onClick={onShow} className={classNames('icon', cartList.length > 0 && 'fill')}>
+        <div onClick={toggleShow} className={classNames('icon', cartList.length > 0 && 'fill')}>
           {cartList.length > 0 && <div className="cartCornerMark">{cartList.length}</div>}
         </div>
         {/* 购物车价格 */}
