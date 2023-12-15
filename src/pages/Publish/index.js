@@ -28,7 +28,6 @@ const Publish = () => {
 
   // 提交表单
   const onFinish = (formValue) => {
-    console.log(formValue)
     // 校验封面类型imageType是否和实际的图片列表imageList数量是相等的
     if (imageList.length !== imageType) return message.warning('封面类型和图片数量不匹配')
     const { title, content, channel_id } = formValue
