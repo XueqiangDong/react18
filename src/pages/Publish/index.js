@@ -69,7 +69,6 @@ const Publish = () => {
   // 切换图片封面类型
   const [imageType, setImageType] = useState(0)
   const onTypeChange = (e) => {
-    console.log('切换封面了', e.target.value)
     setImageType(e.target.value)
   }
 
