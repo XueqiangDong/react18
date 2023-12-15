@@ -28,7 +28,7 @@ const BarChart = ({ title }) => {
       },
       series: [
         {
-          data: [10, 40, 70],
+          data: [20, 40, 18],
           type: 'bar'
         }
       ]
