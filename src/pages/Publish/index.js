@@ -11,7 +11,7 @@ import {
   message
 } from 'antd'
 import { PlusOutlined } from '@ant-design/icons'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import './index.scss'
 
 import ReactQuill from 'react-quill'
@@ -25,7 +25,7 @@ const { Option } = Select
 const Publish = () => {
   // 获取频道列表
   const { channelList } = useChannel()
-
+  let navigate = useNavigate()
   // 提交表单
   const onFinish = (formValue) => {
     // 校验封面类型imageType是否和实际的图片列表imageList数量是相等的
@@ -57,6 +57,7 @@ const Publish = () => {
     } else {
       createArticleAPI(reqData)
     }
+    navigate('/article')
   }
 
   // 上传回调
